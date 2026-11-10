@@ -70,7 +70,40 @@ namespace RestaurantApp_Team_9999
         // คน C รับผิดชอบ
         static void ShowSummary()
         {
-            Console.WriteLine("Not completed");
+            if (restaurants.Count == 0)
+            {
+                Console.WriteLine("ไม่มีข้อมูลร้านอาหาร");
+                return;
+            }
+
+            Restaurant highest = restaurants[0];
+            Restaurant lowest = restaurants[0];
+
+            foreach (Restaurant r in restaurants)
+            {
+                if (r.Rating > highest.Rating)
+                {
+                    highest = r;
+                }
+
+                if (r.Rating < lowest.Rating)
+                {
+                    lowest = r;
+                }
+            }
+
+            Console.WriteLine("=== สรุปคะแนนร้านอาหาร ===");
+
+            Console.WriteLine(
+                "คะแนนสูงสุด: " + highest.Name
+                + " (" + highest.Rating + ")"
+            );
+
+            Console.WriteLine(
+                "คะแนนต่ำสุด: " + lowest.Name
+                + " (" + lowest.Rating + ")"
+            );
+
         }
     }
 

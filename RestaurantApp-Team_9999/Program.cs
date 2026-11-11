@@ -58,7 +58,15 @@ namespace RestaurantApp_Team_9999
         // คน A รับผิดชอบ
         static void AddRestaurant()
         {
-            Console.WriteLine("Not completed");
+            Console.WriteLine("=== รายชื่อร้านอาหารทั้งหมด ===");
+
+            foreach (Restaurant r in restaurants)
+            {
+                Console.WriteLine(
+                    r.Name + " - " + r.Type + " - " + r.Rating
+                );
+            }
+
         }
 
         // คน B รับผิดชอบ
